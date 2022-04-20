@@ -58,13 +58,6 @@
     text-align: center;
 }
 
-
-
-
-
-
-
-
 .controlCol {
     display: none;
 }
@@ -86,6 +79,37 @@
 .gridView1 tbody tr:last-child {
     display: none;
 }
-#rep {
+#rep, .delete, #tblCustomers tr th:nth-child(5) {
     display: none;
+}
+
+
+
+#tblCustomers{
+    margin-top: -409px;
+
+}
+
+.pagesa{
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.sasia{
+    font-size: 55px;
+    font-weight: 500;    
+}
+
+#tblCustomers thead {
+    
+}
+
+#tblCustomers tbody tr td:nth-child(2),
+#tblCustomers tbody tr td:nth-child(3),
+#tblCustomers tbody tr td:nth-child(4){
+    text-align: right;
+}
+
+#invoiceDetails tbody tr td:nth-child(2){
+    text-align: right;
 }

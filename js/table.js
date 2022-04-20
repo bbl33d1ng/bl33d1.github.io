@@ -2,6 +2,9 @@ var produktet = {};
 $(function () {
     calculateDetails();
     setSasiaDefault();
+    updateBleresin();
+    updateNrFat();
+    updateSot();
     $('#txtArtikulli').change(function() {
         $('#txtSasia').text($(this).find(":selected").text());
       });
@@ -133,4 +136,16 @@ function selectQmimi(){
 
 function selectArtikulli(){
     $("#txtArtikulli").select();
+}
+
+function updateNrFat(){
+    $("#nrFat").text($("#nrFatures" + "/2022").val());
+}
+
+function updateBleresin(){
+    $("#bleresi").text($("#browser").val());
+}
+
+function updateSot(){
+    $("#dataSot").text(new Date().toLocaleDateString('en-GB'))
 }

@@ -270,6 +270,11 @@ input[alt="Delete"] {
     max-width: 140px;
 }
 
-#dergoiPagoi{
+#dergoiPagoi, #vizats{
     display:none;
+}
+
+.pagesa{
+    font-size: large;
+    font-weight: bold;
 }
