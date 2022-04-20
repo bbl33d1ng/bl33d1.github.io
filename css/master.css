@@ -1,0 +1,91 @@
+* {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 50px;
+    color:black !important;
+}
+
+
+.headerTxtCenter {
+    max-width: 25px !important;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px !important;
+}
+
+.gridView1 {
+    margin-top: -100px;
+    border-color: white;
+    margin-top:-400px !important;
+}
+.gridView1 th td span{
+    font-size:50px;
+}
+
+
+#invoiceDetails tr {
+    color: black;
+    background-color: white;
+    border: 0px solid white !important;
+}
+
+.detajetBleresit{
+    margin-top:40px;
+}
+
+.detajetBleresit p {
+    margin-top: -65px;
+    text-align: center;
+}
+
+.fatTxt {
+    text-align: center;
+    margin-top: -70px;
+}
+
+#nrFatPrint{
+    font-size:70px;
+}
+
+.blDetailsPrint{
+    margin-top:-59px;
+}
+
+.gridView1 tbody tr td:nth-child(4){
+    text-align:right;
+    max-width:100px;
+}
+.gridView1 tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.controlCol {
+    display: none;
+}
+
+.controlButtons {
+    display: none;
+}
+
+.headerFooterNone {
+    display: none;
+}
+
+.addProdTable, .krijoHeader, .hideFromPrinting {
+    display: none;
+}
+.bleresiDiv {
+    display: none;
+}
+.gridView1 tbody tr:last-child {
+    display: none;
+}
+#rep {
+    display: none;
+}

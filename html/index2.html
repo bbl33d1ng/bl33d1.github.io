@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    <title>Krijo Fature</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/master.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="/css/masterOG.css" type="text/css" media="screen" />
+    <script src="https://kit.fontawesome.com/52609cfd41.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' rel='stylesheet' />
+    <script src="/Styles/order.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        td, h1, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        td {
+            /*font-size: 12px;*/
+        }
+
+        thead > tr > td {
+            font-size: 55px;
+        }
+    </style>
+    <script type="text/javascript">
+        function generatePDF() {
+            const element = document.getElementById("test");
+            html2pdf().from(element).save();
+        }
+
+        function selectSasia() {
+            const input = document.getElementById("txtSasiaNew");
+            input.focus();
+            input.select();
+
+        }
+        function selectQmimi() {
+            const input = document.getElementById("txtQmimiNew");
+            input.focus();
+            input.select();
+
+        }
+        //function selectSasiaEdit() {
+        //    const input = document.getElementById("txtSasiaNew");
+        //    input.focus();
+        //    input.select();
+
+        //}
+        //function selectSasiaEdit() {
+        //    const input = document.getElementById("txtSasiaNew");
+        //    input.focus();
+        //    input.select();
+
+        //}
+
+        function selectSasiaEdit() {
+            const input = document.querySelector("input[name$ = 'txtSasia']");
+            input.focus();
+            input.select();
+        }
+
+        function updateVleraJS() {
+            var x = document.getElementById("txtSasiaNew").value;
+            var y = document.getElementById("txtQmimiNew").value;
+            document.getElementById("txtVleraNew").innerHTML = (Math.round((x * y) * 100) / 100).toFixed(2);;
+
+        }
+        function furnitoriInput() {
+
+        }
+        function clearFurnitoriInput() {
+            document.getElementById("browser").value = "";
+            document.getElementById("browser").focus();
+        }
+        function clearArtikulliInput() {
+            document.getElementById("txtArtikulli").value = "";
+            document.getElementById("txtArtikulli").focus();
+        }
+
+
+        function setBleresin() {
+            //var bleresiInput = document.getElementById("browser").value;
+            //document.getElementById("bleresiPrint").innerHTML = "Bleresi: " + bleresiInput;
+            //__doPostBack('GridView1','');
+        }
+
+        function clickDoc() {
+            document.querySelector(".krijoHeader").click();
+        }
+
+        function printInvoice() {
+            if (document.getElementById("browser").value === "") {
+                return false;
+            }
+            print();
+        }
+
+        function UpdateArtikullin() {
+            document.getElementById('<%=UpdateArtikullinBtn.ClientID %>').click();
+        }
+
+        function UpdateBleresin1() {
+            document.getElementById('<%=UpdateBleresin.ClientID %>').click();
+        }
+
+
+        $(document).ready(function () {
+            $("#GridView1").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    return false;
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <form >
+
+        <br />
+        <div class="container " id="mainDiv">
+            <div class="row">
+                <div class="col detajetBleresit">
+                    <p>LANDI N.T.P</p>
+                    <p>Dardani, Ferizaj</p>
+                    <p>Nui: 811084392</p>
+                    <p>Tel: 044/049/279 487</p>
+                    <p>Email: taulant.dautti@gmail.com</p>
+                    <br />
+                    <p style='text-align: center; margin-bottom: -15px;'>************************************</p>
+                    <br />
+                    <h4 class="fatTxt">Fatura Nr:<label id="nrFat">NrFat</label></h4>
+                    <br />
+                            <div class="blDetailsPrint">
+                            <p style='text-align: center;'>Data: SOT</p>
+                            <p style='text-align: center;'>Bleresi:
+                                </p>
+                            <p style='text-align: center;'>No Unik Identifikues:</p>
+                            <p style='text-align: center;'>No Fiskal:</p>
+                            <p style='text-align: center;'>Adresa:
+                                
+                            </p>
+                            </div>
+                    <p style='text-align: center; margin-bottom: -20px;'>************************************</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a class="logo hideFromPrinting"><strong>by inTouchData</strong> </a>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col">
+                    <h4 class="krijoHeader text-white table-header-font">Kjiro Fature</h4>
+                </div>
+            </div>
+            <br />
+
+
+
+
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <div style="margin-left: -10px;" class="bleresiDiv">
+                                <table style="min-width: 326px;">
+                                    <tr >
+                                        <td style="padding-top:20px;padding-left:15px;" colspan="1">Numri Fatures: </td>
+                                        <td style="padding-top:20px;padding-right:20px;" colspan="1"><input type="text" onchange="updateBleresin()" name="bleresi" id="bleresi"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" style="padding: 4px; font-size: 14px;">Bleresi:</td>
+                                        <td style="padding-top: 13px; padding-bottom: 13px;">
+                                            <input list="bleresit" style="min-width: 225px;" value="Person Fizik"  name="browser" id="browser" />
+                                            <datalist id="bleresit">
+                                                <option value='Emri Bleresit' id='id'></option>
+                                            </datalist>
+                                        </td>
+                                        <td style="justify-self: center">
+                                            <a onclick="clearFurnitoriInput()" style="font-weight: bolder; padding: 5px; font-size: 13px;">
+                                                <img style="max-width: 20px; max-height: 20px;" src="/Images/remove.png" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center" >
+                                            <td colspan="6" style="padding:8px;"></td>
+                                        </tr>
+                                </table>
+                                <script>
+                                    //const ddBleresi = document.getElementById("browser").value = "Person fizik";
+                                </script>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <div class="col">
+
+                            <table class="addProdTable">
+                                <tr>
+                                     <td style="justify-self: center; padding-left:5px;"><br />
+                                            <a onclick="clearArtikulliInput()" style="font-size: 13px;">
+                                                <img style="max-width: 20px; max-height: 20px;" src="/Images/remove.png" /></a>
+                                    </td>
+                                    <td style="padding: 6px; " onclick="selectArtikulli()">Artikulli<br />
+                                        <input style="max-width: 140px;" name="ddArtikulli" value="" onchange="getPrice()"  id="txtArtikulli" list="artikujt" />
+                                        <datalist id="artikujt">
+                                            <script>
+                                                $(document).ready(function(){
+                                                    $.getJSON("/js/products.json",
+                                                    function(data){
+                                                        var product ='';
+                                                        $.each(data, function(key,value){
+                                                            product += '<option value="'+value.emri+'"> </option>';
+                                                            produktet[value.emri] = value.qmimi;
+                                                        });
+                                                        $('#artikujt').append(product);
+                                                    });
+                                                });
+                                            </script>
+                                        </datalist>
+                                    </td>
+                                    <td style="padding: 2px" onclick="selectSasia()">Sasia<br />
+                                        <input style="max-width: 35px;" type="text" name="Sasia" id="txtSasia" value="" />
+                                    </td>
+                                    <td style="padding: 2px;" onclick="selectQmimi()">Qmimi<br />
+                                        <input style="max-width: 35px;" type="text" name="Qmimi" id="txtQmimi" value="" />
+                                    </td>
+                                    <td style="padding: 2px; margin-top:2px;">Vlera<br />
+                                        <input style="max-width: 35px;" type="text" name="Qmimi" id="txtQmimi" value="" />
+                                    </td>
+                                </tr>
+                                <style>
+                                    .addProdBtn {
+                                        min-width: 300px;
+                                    }
+                                </style>
+                                <tr>
+
+                                    <td colspan="6" style="text-align: center; padding: 6px;">
+                                        <button class="btn btn-info endButtons hideFromPrinting" type="button" id="btnAdd">Shto rreshtin</button>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                    <div class="row justify-content-center">
+                        <div class="col colPadding">
+                            <table id="tblCustomers" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Artikulli</th>
+                                        <th>Sasia</th>
+                                        <th>Qmimi</th>
+                                        <th>Vlera</th>
+                                        <th>.</th>
+                                    </tr>
+                                </thead>
+                                <tbody><tr><td>Malboro</td><td>2</td><td>2</td><td>4</td><td><a class="delete" href="JavaScript:void(0);"><img style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a></td></tr><tr><td>Red Code</td><td>3</td><td>4</td><td>12</td><td><a class="delete" href="JavaScript:void(0);"><img style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a></td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <p id="vizat" style='font-size: 14px; width: 100% !important; margin-top: -10px; float: left;'>--------------------------------</p>
+
+                        </div>
+                    </div>
+
+                    <table class="table-striped table-dark table-bordered" id="invoiceDetails" style="border: 1px solid white; padding: 10px !important;">
+                        <tr>
+                            <td>Pako:</td>
+                            <td id="pakoTxt"></td>
+                        </tr>
+                        <tr>
+                            <td>Vlera pa TVSH:</td>
+                            <td id="paTvshTxt"></td>
+                        </tr>
+                        <tr>
+                            <td>TVSH 18%:</td>
+                            <td id="tvshTxt"></td>
+                        </tr>
+                        <tr>
+                            <td class="pagesa">Pagesa:</td>
+                            <td id="pagesaTxt" class="pagesa"></td>
+                            <style>
+                                .pagesa{
+                                    font-size: large;
+                                    font-weight: bold;
+                                }
+                            </style>
+                        </tr>
+                    </table>
+
+                    <br />
+
+            <div class="row">
+                <style>
+                    .endButtons {
+                        min-width: 327px;
+                    }
+                </style>
+
+                <div class="col-6">
+                    <button class="btn btn-info endButtons hideFromPrinting" onclick="print()">Printo Faturen</button>
+                </div>
+                <div id="text">
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn btn-dark endButtons hideFromPrinting" onclick="print()">Fature e re</button>
+                </div>
+            </div>
+            <div id="dergoiPagoi" style="">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <h6 style="display: inline">Pranoi:</h6>
+                    </div>
+                    <div class="col-6">
+                        <h6 style="display: inline">Dergoi:</h6>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <h6 style="display: inline">________</h6>
+                    </div>
+                    <div class="col-6">
+                        <h6 style="display: inline">________</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <br />
+        <br />
+        <br />
+
+    </form>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/table.js"></script>
+</body>
+</html>
