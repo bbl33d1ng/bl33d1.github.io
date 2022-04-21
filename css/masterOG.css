@@ -278,3 +278,13 @@ input[alt="Delete"] {
     font-size: large;
     font-weight: bold;
 }
+
+#tblCustomers {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#tblCustomers tr td{
+    word-wrap: break-word;
+    padding: 8px;
+}

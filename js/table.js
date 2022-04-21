@@ -11,23 +11,24 @@ $(function () {
 
     $('#btnAdd').on('click', function () {
         setSasiaDefault();
-        var name, country, id;
-        id = $("#txtArtikulli").val();
-        name = $("#txtSasia").val();
-        country = $("#txtQmimi").val();
+        var sasia, qmimi, artikulli;
+        artikulli = $("#txtArtikulli").val();
+        sasia = $("#txtSasia").val();
+        qmimi = $("#txtQmimi").val();
 
-        //var edit = "<a class='edit' href='JavaScript:void(0);' >Edit</a>";
-        var del = "<a class='delete' href='JavaScript:void(0);'><img style='max-width:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
+        //var edit = "<a class='edit' href='JavaScript:voartikulli(0);' >Edit</a>";
+        var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-wartikullith:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
 
-        if (id == "") {
+        if (artikulli == "") {
             alert("Sheno artikullin!");
         } else {
-            var table = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + country + "</td><td>"+(parseFloat(name) * parseFloat(country))+"</td><td>" + del + "</td></tr>";
+            qmimi = parseFloat(qmimi).toFixed(2);
+            var table = "<tr><td>" + artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
             $("#tblCustomers").append(table);
         }
-        id = $("#txtArtikulli").val("");
-        name = $("#txtSasia").val("");
-        country = $("#txtQmimi").val("");
+        artikulli = $("#txtArtikulli").val("");
+        sasia = $("#txtSasia").val("");
+        qmimi = $("#txtQmimi").val("");
 
         calculateDetails();
         
@@ -53,9 +54,9 @@ $(function () {
 
             console.log(i +": " +artikulli + sasia + qmimi);
         })
-        var pagesa = (totalVlera).toFixed(2);;
-        var tvsh18 = ((pagesa / 118) * 100).toFixed(2);;
-        var vleraPaTvsh = (pagesa - tvsh18).toFixed(2);;
+        var pagesa = (totalVlera).toFixed(2);
+        var tvsh18 = ((pagesa / 118) * 100).toFixed(2);
+        var vleraPaTvsh = (pagesa - tvsh18).toFixed(2);
 
         $("#pakoTxt").text(totalSasia);
         $("#tvshTxt").text(vleraPaTvsh + "€");
@@ -139,7 +140,10 @@ function selectArtikulli(){
 }
 
 function updateNrFat(){
-    $("#nrFat").text($("#nrFatures" + "/2022").val());
+    console.log("HIT");
+    var fatInput = $("#nrFatures").val();
+
+    $("#nrFaturesPrint").text(fatInput);
 }
 
 function updateBleresin(){
