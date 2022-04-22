@@ -1,3 +1,5 @@
+
+
 var produktet = {};
 $(function () {
     calculateDetails();
