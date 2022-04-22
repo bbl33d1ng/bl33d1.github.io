@@ -1,5 +1,13 @@
 const filesToCache = [
-    "index2.html",
+    "index.html",
+    "master.css",
+    "masterOG.css",
+    "index.js",
+    "products.json",
+    "table.js",
+    "jquery.js",
+    "remove.png",
+    "minusWhite.png",
 ];
 const staticCacheName = 'pages-cache-v1';
 
