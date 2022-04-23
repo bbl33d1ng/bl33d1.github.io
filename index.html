@@ -35,6 +35,11 @@
         }
     </style>
     <script type="text/javascript">
+
+        function printo(){
+            window.print();
+        }
+        
         function generatePDF() {
             const element = document.getElementById("test");
             html2pdf().from(element).save();
