@@ -155,3 +155,7 @@ function updateBleresin(){
 function updateSot(){
     $("#dataSot").text(new Date().toLocaleDateString('en-GB'))
 }
+
+function printo(){
+    window.print();
+}
