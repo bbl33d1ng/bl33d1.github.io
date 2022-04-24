@@ -1,11 +1,11 @@
 {
-    "theme_color": "#3c85af",
-    "background_color": "#a4b9c6",
+    "theme_color": "#5fbab4",
+    "background_color": "#1d2025",
     "display": "standalone",
     "scope": "/",
     "start_url": "/index.html",
-    "name": "aur-sales",
-    "short_name": "aur",
+    "name": "inTouch Prog. Shitjes",
+    "short_name": "inTouch",
     "icons": [
         {
             "src": "/icon-192x192.png",
