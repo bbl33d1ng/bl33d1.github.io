@@ -288,3 +288,19 @@ input[alt="Delete"] {
     word-wrap: break-word;
     padding: 8px;
 }
+
+#browser{
+    max-width: 175px;
+}
+
+#txtSasia, #txtQmimi{
+    text-align: center;
+}
+
+#mainDiv > div:nth-child(9) > div > table > tbody > tr:nth-child(1) > td:nth-child(1){
+    text-align: right;
+}
+
+#mainDiv > div:nth-child(8) > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1){
+    max-width: 60px;
+}

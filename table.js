@@ -19,7 +19,7 @@ $(function () {
         qmimi = $("#txtQmimi").val();
 
         //var edit = "<a class='edit' href='JavaScript:voartikulli(0);' >Edit</a>";
-        var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-wartikullith:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
+        var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-width:20px; max-height:20px;' src='/minusWhite.png'></a>";
 
         if (artikulli == "") {
             alert("Sheno artikullin!");

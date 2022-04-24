@@ -39,7 +39,7 @@
         function printo(){
             window.print();
         }
-        
+
         function generatePDF() {
             const element = document.getElementById("test");
             html2pdf().from(element).save();
@@ -183,14 +183,14 @@
                         <table style="min-width: 326px;">
                             <tr>
                                 <td style="padding-top:20px;padding-left:15px;" colspan="1">Numri Fatures: </td>
-                                <td style="padding-top:20px;padding-right:20px;" colspan="1"><input type="text"
+                                <td style="padding-top:20px;" colspan="1"><input type="text"
                                         onchange="updateNrFat()" name="nrFatures" id="nrFatures"></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td class="text-center" style="padding: 4px; font-size: 14px;">Bleresi:</td>
+                                <td class="" style="padding: 4px;text-align: right; font-size: 14px;">Bleresi:</td>
                                 <td style="padding-top: 13px; padding-bottom: 13px;">
-                                    <input list="bleresit" style="min-width: 225px;" onchange="updateBleresin()"
+                                    <input list="bleresit"  onchange="updateBleresin()"
                                         value="Person Fizik" name="browser" id="browser" />
                                     <datalist id="bleresit">
                                         <option value='Emri Bleresit' id='id'></option>
@@ -220,11 +220,11 @@
 
                     <table class="addProdTable">
                         <tr>
-                            <td style="justify-self: center; padding-left:5px;"><br />
+                            <td style="justify-self: center; padding-left:5px;text-align: center;"><br />
                                 <a onclick="clearArtikulliInput()" style="font-size: 13px;">
-                                    <img style="max-width: 20px; max-height: 20px;" src="/remove.png" /></a>
+                                    <img style="max-width: 20px; max-height: 20px; margin-right: -10px;" src="/remove.png" /></a>
                             </td>
-                            <td style="padding: 6px; " onclick="selectArtikulli()">Artikulli<br />
+                            <td style="padding: 6px; width: 40%;" onclick="selectArtikulli()">Artikulli<br />
                                 <input style="max-width: 140px;" name="ddArtikulli" value="" onchange="getPrice()"
                                     id="txtArtikulli" list="artikujt" />
                                 <datalist id="artikujt">
@@ -243,10 +243,10 @@
                                     </script>
                                 </datalist>
                             </td>
-                            <td style="padding: 2px" onclick="selectSasia()">Sasia<br />
+                            <td style="padding: 2px;width: 12%;" onclick="selectSasia()">Sasia<br />
                                 <input style="max-width: 35px;" type="text" name="Sasia" id="txtSasia" value="" />
                             </td>
-                            <td style="padding: 2px;" onclick="selectQmimi()">Qmimi<br />
+                            <td style="padding: 2px;    width: 14%;" onclick="selectQmimi()">Qmimi<br />
                                 <input style="max-width: 35px;" type="text" name="Qmimi" id="txtQmimi" value="" />
                             </td>
                             <td style="padding: 2px; margin-top:2px;">Vlera<br />
@@ -433,8 +433,8 @@
                 </style>
 
                 <div class="col-6">
-                    <a type="button" onclick="printo()" class="btn btn-danger endButtons hideFromPrinting">Printo Faturen !</a>
-                    <button class="btn btn-info endButtons hideFromPrinting" onclick="print()">Printo Faturen</button>
+                    <a type="button" onclick="printo()" class="btn btn-info endButtons hideFromPrinting">Printo Faturen</a>
+                    <!-- <button class="btn btn-info endButtons hideFromPrinting" onclick="print()">Printo Faturen</button> -->
                 </div>
                 <div id="text">
                 </div>
