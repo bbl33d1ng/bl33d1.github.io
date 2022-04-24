@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/index.html",
-    "name": "inTouch Prog. Shitjes",
-    "short_name": "inTouch",
+    "name": "Intouch - Shitja",
+    "short_name": "inTouch Shitja",
     "icons": [
         {
             "src": "/icon-192x192.png",
