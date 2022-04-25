@@ -6,15 +6,15 @@
     <title>Krijo Fature</title>
     <meta charset="utf-8" />
     <link rel="manifest" href="/manifest.json">
-    <script type="text/javascript" src="/index.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/master.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="/masterOG.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/master.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="/css/masterOG.css" type="text/css" media="screen" />
     <script src="https://kit.fontawesome.com/52609cfd41.js" crossorigin="anonymous"></script>
-    <script src="/jquery.js"></script>
+    <script src="/js/jquery.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
@@ -57,18 +57,6 @@
             input.select();
 
         }
-        //function selectSasiaEdit() {
-        //    const input = document.getElementById("txtSasiaNew");
-        //    input.focus();
-        //    input.select();
-
-        //}
-        //function selectSasiaEdit() {
-        //    const input = document.getElementById("txtSasiaNew");
-        //    input.focus();
-        //    input.select();
-
-        //}
 
         function selectSasiaEdit() {
             const input = document.querySelector("input[name$ = 'txtSasia']");
@@ -89,16 +77,13 @@
             document.getElementById("browser").value = "";
             document.getElementById("browser").focus();
         }
+        function clearNrFatInput() {
+            document.getElementById("nrFatures").value = "";
+            document.getElementById("nrFatures").focus();
+        }
         function clearArtikulliInput() {
             document.getElementById("txtArtikulli").value = "";
             document.getElementById("txtArtikulli").focus();
-        }
-
-
-        function setBleresin() {
-            //var bleresiInput = document.getElementById("browser").value;
-            //document.getElementById("bleresiPrint").innerHTML = "Bleresi: " + bleresiInput;
-            //__doPostBack('GridView1','');
         }
 
         function clickDoc() {
@@ -111,18 +96,6 @@
             }
             print();
         }
-
-
-
-
-        // $(document).ready(function () {
-        //     $("#GridView1").keydown(function (e) {
-        //         if (e.keyCode == 13) {
-        //             return false;
-        //         }
-        //     });
-
-        // });
 
     </script>
 </head>
@@ -147,11 +120,9 @@
                     <div class="blDetailsPrint">
                         <p style='text-align: center;'>Data: <span id="dataSot"></span></p>
                         <p style='text-align: center;'>Bleresi:<span id="bleresi"></span></p>
-                        <p style='text-align: center;'>No Unik Identifikues:</p>
-                        <p style='text-align: center;'>No Fiskal:</p>
-                        <p style='text-align: center;'>Adresa:
-
-                        </p>
+                        <p style='text-align: center;'>No Unik Identifikues:<span id="nrUnik"></span></p>
+                        <p style='text-align: center;'>No Fiskal:<span id="nrFiskal"></span></p>
+                        <p style='text-align: center;'>Adresa:<span id="adresa"></span></p>
                     </div>
                     <p style='text-align: center; margin-bottom: -20px;'>====================================</p>
                 </div>
@@ -177,9 +148,11 @@
                         <table style="min-width: 326px;">
                             <tr>
                                 <td style="padding-top:20px;padding-left:15px;" colspan="1">Numri Fatures: </td>
-                                <td style="padding-top:20px;    max-width: 175px;" colspan="1"><input type="text"
+                                <td style="padding-top:20px; padding-bottom:20px;   max-width: 175px;" colspan="1"><input type="text"
                                         onchange="updateNrFat()" name="nrFatures" id="nrFatures"></td>
-                                <td></td>
+                                <td style="justify-self: center; " ><a onclick="clearNrFatInput()"
+                                    style="font-weight: bolder;     padding: 5px; font-size: 13px;">
+                                    <img style="max-width: 20px; max-height: 20px;" src="/images/remove.png" /></a></td>
                             </tr>
                             <tr>
                                 <td class="" style="padding: 4px;text-align: right; font-size: 14px;">Bleresi:</td>
@@ -189,11 +162,29 @@
                                     <datalist id="bleresit">
                                         <option value='Emri Bleresit' id='id'></option>
                                     </datalist>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $.getJSON("../data/bleresit.json", function (data) {
+                                                var bleresitN = '';
+                                                $.each(data, function (key, value) {
+                                                    bleresitN += '<option value="' + value.emri + '"> </option>';
+                                                    var bleresiAktual = {
+                                                        emri : value.emri,
+                                                        adresa : value.adresa,
+                                                        fiskali : value.fiskali
+                                                    }
+                                                    bleresit.push(bleresiAktual);
+                                                    
+                                                });
+                                                $('#bleresit').append(bleresitN);
+                                            });
+                                        });
+                                    </script>
                                 </td>
                                 <td style="justify-self: center">
                                     <a onclick="clearFurnitoriInput()"
-                                        style="font-weight: bolder; padding: 5px; font-size: 13px;">
-                                        <img style="max-width: 20px; max-height: 20px;" src="/remove.png" /></a>
+                                        style="font-weight: bolder; padding: 5px;        font-size: 13px;">
+                                        <img style="max-width: 20px; max-height: 20px;" src="/images/remove.png" /></a>
                                 </td>
                             </tr>
                             <tr class="text-center">
@@ -216,7 +207,7 @@
                         <tr>
                             <td style="justify-self: center; padding-left:5px;text-align: center;"><br />
                                 <a onclick="clearArtikulliInput()" style="font-size: 13px;">
-                                    <img style="max-width: 20px; max-height: 20px; margin-right: -10px;" src="/remove.png" /></a>
+                                    <img style="max-width: 20px; max-height: 20px; margin-right: -10px;" src="/images/remove.png" /></a>
                             </td>
                             <td style="padding: 6px; width: 40%;" onclick="selectArtikulli()">Artikulli<br />
                                 <input style="max-width: 140px;" name="ddArtikulli" value="" onchange="getPrice()"
@@ -224,7 +215,7 @@
                                 <datalist id="artikujt">
                                     <script>
                                         $(document).ready(function () {
-                                            $.getJSON("/products.json",
+                                            $.getJSON("../data/products.json",
                                                 function (data) {
                                                     var product = '';
                                                     $.each(data, function (key, value) {
@@ -469,7 +460,7 @@
     </form>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="/table.js"></script>
+    <script type="text/javascript" src="/js/table.js"></script>
     
 </body>
 

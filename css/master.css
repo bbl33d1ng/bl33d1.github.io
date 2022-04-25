@@ -131,3 +131,8 @@
 #tblCustomers tbody:nth-child(3) tr td:nth-child(5){
     display: none;
 }
+
+#tblCustomers tbody tr th{
+    font-size: 32px;
+    text-align: center;
+}

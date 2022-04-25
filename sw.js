@@ -1,18 +1,19 @@
 const filesToCache = [
-    "index.html",
-    "master.css",
-    "masterOG.css",
-    "index.js",
-    "products.json",
-    "table.js",
-    "jquery.js",
-    "remove.png",
-    "minusWhite.png",
+    "html/index.html",
+    "css/master.css",
+    "css/masterOG.css",
+    "js/index.js",
+    "data/products.json",
+    "data/bleresit.json",
+    "js/table.js",
+    "js/jquery.js",
+    "images/remove.png",
+    "images/minusWhite.png",
 ];
-const staticCacheName = 'pages-cache-v1';
+const staticCacheName = 'pages-cache-v2';
 
 self.addEventListener('install', event => {
-  console.log('Attempting to install service worker and cache static assets');
+  //console.log('Attempting to install service worker and cache static assets');
   event.waitUntil(
     caches.open(staticCacheName)
     .then(cache => {
@@ -51,7 +52,7 @@ addEventListener('activate', event => {
       } catch (err) {
         // If this was a navigation, show the offline page:
         if (request.mode === 'navigate') {
-          return caches.match('index2.html');
+          return caches.match('index.html');
         }
   
         // Otherwise throw

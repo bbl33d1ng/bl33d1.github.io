@@ -1,6 +1,7 @@
 
 
 var produktet = {};
+var bleresit = [];
 $(function () {
     calculateDetails();
     setSasiaDefault();
@@ -19,7 +20,7 @@ $(function () {
         qmimi = $("#txtQmimi").val();
 
         //var edit = "<a class='edit' href='JavaScript:voartikulli(0);' >Edit</a>";
-        var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-width:20px; max-height:20px;' src='/minusWhite.png'></a>";
+        var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-width:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
 
         if (artikulli == "") {
             alert("Sheno artikullin!");
@@ -54,7 +55,7 @@ $(function () {
 
 
 
-            console.log(i +": " +artikulli + sasia + qmimi);
+            //console.log(i +": " +artikulli + sasia + qmimi);
         })
         var pagesa = (totalVlera).toFixed(2);
         var tvsh18 = ((pagesa / 118) * 100).toFixed(2);
@@ -67,7 +68,7 @@ $(function () {
 
         
 
-        console.log(totalVlera +"|"+totalSasia);
+        //console.log(totalVlera +"|"+totalSasia);
     }
 
     $('#btnUpdate').on('click', function () {
@@ -119,7 +120,20 @@ function getPrice(){
         if(selectedProd === key){
             $("#txtQmimi").val(value);
         }
-      }
+    }
+}
+
+function updateBleresin(){
+    $("#bleresi").text($("#browser").val());
+    var selectedBleresi = $("browser").val();
+    bleresit.forEach(b => {
+        if($("#browser").val() === b.emri){
+            $("#nrFiskal").text(b.fiskali);
+            $("#adresa").text(b.adresa);
+            console.log($("#adresa").text());
+            console.log($("#nrFiskal").text());
+        }
+    });
 }
 
 function setSasiaDefault(){
@@ -148,9 +162,7 @@ function updateNrFat(){
     $("#nrFaturesPrint").text(fatInput);
 }
 
-function updateBleresin(){
-    $("#bleresi").text($("#browser").val());
-}
+
 
 function updateSot(){
     $("#dataSot").text(new Date().toLocaleDateString('en-GB'))

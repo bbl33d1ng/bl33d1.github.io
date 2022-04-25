@@ -3,28 +3,28 @@
     "background_color": "#1d2025",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/index.html",
+    "start_url": "html/index.html",
     "name": "Intouch - Shitja",
     "short_name": "inTouch Shitja",
     "icons": [
         {
-            "src": "/icon-192x192.png",
+            "src": "images/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icon-256x256.png",
+            "src": "images/icon-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/icon-384x384.png",
+            "src": "images/icon-384x384.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/icon-512x512.png",
-            "sizes": "512x512",
+            "src": "images/icon-512x512.png",
+            "sizes": "512x512", 
             "type": "image/png"
         }
     ]
