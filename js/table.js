@@ -126,7 +126,7 @@ function getPrice(){
 
 function updateBleresin(){
     $("#bleresi").text($("#browser").val());
-    var selectedBleresi = $("browser").val();
+    //var selectedBleresi = $("browser").val();
     bleresit.forEach(b => {
         if($("#browser").val() === b.emri){
             $("#nrFiskal").text(b.fiskali);
@@ -138,9 +138,32 @@ function updateBleresin(){
 }
 
 function getNumrinEFunditFatures(){
-    $.getJSON("../data/details.json", function (data) {
-        $("nrFaturesPrint").val(data.nrFundit);
-    });
+    // $.getJSON("../data/details.json", function (data) {
+    //     $("#nrFatures").val(data.nrFundit);
+    // });
+    var nrFundit = localStorage.getItem('nrFunditStorage');
+    if(nrFundit === null){
+        localStorage.setItem('nrFunditStorage', 1);
+        $("#nrFatures").val("1");
+    }
+    $("#nrFatures").val(nrFundit);
+    //read
+    
+    //console.log(obj);
+}
+
+
+
+function addOneToNrFatFundit(){
+    var obj = localStorage.getItem('nrFunditStorage');
+    var FatPlusOne = parseInt(obj) + 1 ;
+
+    localStorage.setItem('nrFunditStorage', FatPlusOne);
+}
+
+function clearTable(){
+    $("#myTable").find("tr:gt(0)").remove();
+    addOneToNrFatFundit();
 }
 
 function setSasiaDefault(){
