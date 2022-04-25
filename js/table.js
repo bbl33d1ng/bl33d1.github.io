@@ -138,6 +138,7 @@ function updateBleresin(){
 }
 
 function getNumrinEFunditFatures(){
+    //read from JSON 
     // $.getJSON("../data/details.json", function (data) {
     //     $("#nrFatures").val(data.nrFundit);
     // });
@@ -145,11 +146,10 @@ function getNumrinEFunditFatures(){
     if(nrFundit === null){
         localStorage.setItem('nrFunditStorage', 1);
         $("#nrFatures").val("1");
+    }else{
+        $("#nrFatures").val(nrFundit);
     }
-    $("#nrFatures").val(nrFundit);
-    //read
     
-    //console.log(obj);
 }
 
 
@@ -162,7 +162,7 @@ function addOneToNrFatFundit(){
 }
 
 function clearTable(){
-    $("#myTable").find("tr:gt(0)").remove();
+    window.location.href = window.location.href;
     addOneToNrFatFundit();
 }
 
