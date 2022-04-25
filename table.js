@@ -142,7 +142,7 @@ function selectArtikulli(){
 }
 
 function updateNrFat(){
-    console.log("HIT");
+    //console.log("HIT");
     var fatInput = $("#nrFatures").val();
 
     $("#nrFaturesPrint").text(fatInput);

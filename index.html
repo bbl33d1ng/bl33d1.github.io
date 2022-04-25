@@ -32,6 +32,9 @@
         }
     </style>
     <script type="text/javascript">
+        function clearTable(){
+            $("#myTable").find("tr:gt(0)").remove();
+        }
 
         function printo(){
             window.print();
@@ -109,23 +112,17 @@
             print();
         }
 
-        function UpdateArtikullin() {
-            document.getElementById('<%=UpdateArtikullinBtn.ClientID %>').click();
-        }
-
-        function UpdateBleresin1() {
-            document.getElementById('<%=UpdateBleresin.ClientID %>').click();
-        }
 
 
-        $(document).ready(function () {
-            $("#GridView1").keydown(function (e) {
-                if (e.keyCode == 13) {
-                    return false;
-                }
-            });
 
-        });
+        // $(document).ready(function () {
+        //     $("#GridView1").keydown(function (e) {
+        //         if (e.keyCode == 13) {
+        //             return false;
+        //         }
+        //     });
+
+        // });
 
     </script>
 </head>
@@ -231,6 +228,7 @@
                                                 function (data) {
                                                     var product = '';
                                                     $.each(data, function (key, value) {
+                                                        
                                                         product += '<option value="' + value.emri + '"> </option>';
                                                         produktet[value.emri] = value.qmimi;
                                                     });
@@ -280,15 +278,15 @@
                             <col span="1" style="width: 10%;">
                          </colgroup>
                         <tr>
-                                <th>Artikulli</th>
-                                <th>Sasia</th>
-                                <th>Qmimi</th>
-                                <th>Vlera</th>
-                                <th>.</th>
-                            </tr>
+                            <th>Artikulli</th>
+                            <th>Sasia</th>
+                            <th>Qmimi</th>
+                            <th>Vlera</th>
+                            <th>.</th>
+                        </tr>
                         <tbody>
-                            <tr>
-                                <td>Malboro</td>
+                            <!-- <tr>
+                                <td><p>4030600001295</p><p>Rothmans of london blue</p></td>
                                 <td>2</td>
                                 <td>2</td>
                                 <td>4</td>
@@ -385,7 +383,7 @@
                                 <td><a class="delete" href="JavaScript:void(0);"><img
                                             style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -439,7 +437,7 @@
             <br />
             <div class="row">
                 <div class="col-6">
-                    <button class="btn btn-dark endButtons hideFromPrinting" onclick="print()">Fature e re</button>
+                    <a type="button" onclick="clearTable()" class="btn btn-dark endButtons hideFromPrinting">Fature e re</a>
                 </div>
             </div>
             <div id="dergoiPagoi" >
