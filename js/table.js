@@ -8,6 +8,7 @@ $(function () {
     updateBleresin();
     updateNrFat();
     updateSot();
+    getNumrinEFunditFatures();
     $('#txtArtikulli').change(function() {
         $('#txtSasia').text($(this).find(":selected").text());
       });
@@ -133,6 +134,12 @@ function updateBleresin(){
             console.log($("#adresa").text());
             console.log($("#nrFiskal").text());
         }
+    });
+}
+
+function getNumrinEFunditFatures(){
+    $.getJSON("../data/details.json", function (data) {
+        $("nrFaturesPrint").val(data.nrFundit);
     });
 }
 
