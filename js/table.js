@@ -31,16 +31,19 @@ $(function () {
         if (artikulli == "") {
             alert("Sheno artikullin!");
         } else {
-            for (const [key, value] of Object.entries(produktetId)) {
-                //console.log(key, value);
-                if(artikulli === key){
-                    barcode = value;
-                }
-            }
+            //uncomment to add the barcode
+            // for (const [key, value] of Object.entries(produktetId)) {
+            //     //console.log(key, value);
+            //     if(artikulli === key){
+            //         barcode = value;
+            //     }
+            // }
             qmimi = parseFloat(qmimi).toFixed(2);
-            var table = "<tr><td><span id='barcode'>" +barcode + "</span><span id='vizaArtikulli'>-</span>"+ artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
+            var table = "<tr><td>"+ artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
             $("#tblCustomers").append(table);
         }
+        //add barcode
+        //<span id='barcode'>" +barcode + "</span>"
         artikulli = $("#txtArtikulli").val("");
         sasia = $("#txtSasia").val("");
         qmimi = $("#txtQmimi").val("");

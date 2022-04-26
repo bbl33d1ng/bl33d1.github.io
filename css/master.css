@@ -108,8 +108,12 @@
 #tblCustomers tr td{
     word-wrap: break-word;
     padding: 4mm;
-    border-top: 2px solid black;
+    border-top: 3px solid black !important;
     font-size: 40px;
+}
+
+#tblCustomers tbody tr:last-child td{
+    border-bottom: 3px solid black !important;
 }
 
 #tblCustomers tbody tr td:nth-child(2),
