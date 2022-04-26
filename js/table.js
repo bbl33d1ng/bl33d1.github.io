@@ -50,7 +50,6 @@ $(function () {
 
         calculateDetails();
         
-
         Clear();
     });
     
@@ -70,6 +69,7 @@ $(function () {
             $('#bleresit').append(bleresitN);
         });
     }    
+    
 
     function updateProduktetArrayAndInput(){
         $.getJSON("../data/products.json",
