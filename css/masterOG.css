@@ -304,3 +304,11 @@ input[alt="Delete"] {
 #mainDiv > div:nth-child(8) > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1){
     max-width: 60px;
 }
+
+#barcode, #barcodeHeader{
+    display: none;
+}
+
+#vizaArtikulli{
+    display: none;
+}

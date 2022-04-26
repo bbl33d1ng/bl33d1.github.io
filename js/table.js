@@ -1,6 +1,7 @@
 
 
 var produktet = {};
+var produktetId = {};
 var bleresit = [];
 $(function () {
     calculateDetails();
@@ -8,6 +9,8 @@ $(function () {
     updateBleresin();
     updateNrFat();
     updateSot();
+    updateBleresinArrayAndInput();
+    updateProduktetArrayAndInput();
     getNumrinEFunditFatures();
     $('#txtArtikulli').change(function() {
         $('#txtSasia').text($(this).find(":selected").text());
@@ -23,11 +26,19 @@ $(function () {
         //var edit = "<a class='edit' href='JavaScript:voartikulli(0);' >Edit</a>";
         var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-width:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
 
+        var barcode;
+
         if (artikulli == "") {
             alert("Sheno artikullin!");
         } else {
+            for (const [key, value] of Object.entries(produktetId)) {
+                //console.log(key, value);
+                if(artikulli === key){
+                    barcode = value;
+                }
+            }
             qmimi = parseFloat(qmimi).toFixed(2);
-            var table = "<tr><td>" + artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
+            var table = "<tr><td><span id='barcode'>" +barcode + "</span><span id='vizaArtikulli'>-</span>"+ artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
             $("#tblCustomers").append(table);
         }
         artikulli = $("#txtArtikulli").val("");
@@ -39,6 +50,37 @@ $(function () {
 
         Clear();
     });
+    
+    function updateBleresinArrayAndInput(){
+        $.getJSON("../data/bleresit.json", function (data) {
+            var bleresitN = '';
+            $.each(data, function (key, value) {
+                bleresitN += '<option value="' + value.emri + '"> </option>';
+                var bleresiAktual = {
+                    emri : value.emri,
+                    adresa : value.adresa,
+                    fiskali : value.fiskali
+                }
+                bleresit.push(bleresiAktual);
+                
+            });
+            $('#bleresit').append(bleresitN);
+        });
+    }    
+
+    function updateProduktetArrayAndInput(){
+        $.getJSON("../data/products.json",
+            function (data) {
+                var product = '';
+                $.each(data, function (key, value) {
+                    
+                    product += '<option value="' + value.emri + '"> </option>';
+                    produktet[value.emri] = value.qmimi;
+                    produktetId[value.emri] = value.id;
+                });
+                $('#artikujt').append(product);
+            });
+    }
 
     function calculateDetails(){
         //iterating through table tds with each method and 

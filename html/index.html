@@ -162,20 +162,7 @@
                                     </datalist>
                                     <script>
                                         $(document).ready(function () {
-                                            $.getJSON("../data/bleresit.json", function (data) {
-                                                var bleresitN = '';
-                                                $.each(data, function (key, value) {
-                                                    bleresitN += '<option value="' + value.emri + '"> </option>';
-                                                    var bleresiAktual = {
-                                                        emri : value.emri,
-                                                        adresa : value.adresa,
-                                                        fiskali : value.fiskali
-                                                    }
-                                                    bleresit.push(bleresiAktual);
-                                                    
-                                                });
-                                                $('#bleresit').append(bleresitN);
-                                            });
+
                                         });
                                     </script>
                                 </td>
@@ -213,16 +200,7 @@
                                 <datalist id="artikujt">
                                     <script>
                                         $(document).ready(function () {
-                                            $.getJSON("../data/products.json",
-                                                function (data) {
-                                                    var product = '';
-                                                    $.each(data, function (key, value) {
-                                                        
-                                                        product += '<option value="' + value.emri + '"> </option>';
-                                                        produktet[value.emri] = value.qmimi;
-                                                    });
-                                                    $('#artikujt').append(product);
-                                                });
+
                                         });
                                     </script>
                                 </datalist>
@@ -267,23 +245,23 @@
                             <col span="1" style="width: 10%;">
                          </colgroup>
                         <tr>
-                            <th>Artikulli</th>
+                            <th><span id="barcodeHeader">Barcode</span>Artikulli</th>
                             <th>Sasia</th>
                             <th>Qmimi</th>
                             <th>Vlera</th>
                             <th>.</th>
                         </tr>
                         <tbody>
-                            <!-- <tr>
-                                <td><p>4030600001295</p><p>Rothmans of london blue</p></td>
+                           <!-- <tr>
+                                <td><span id="barcode">4030600001295</span>Rothmans of london blue</td>
                                 <td>2</td>
-                                <td>2</td>
-                                <td>4</td>
+                                <td>2.00</td>
+                                <td>4.00</td>
                                 <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
+                                            style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a>
                                 </td>
                             </tr>
-                            <tr>
+                             <tr>
                                 <td>Red Code</td>
                                 <td>3</td>
                                 <td>4</td>

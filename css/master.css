@@ -1,4 +1,4 @@
-* {
+* , span{
     font-family: 'Roboto Mono', monospace !important;
     font-size: 50px;
     color:black !important;
@@ -135,4 +135,17 @@
 #tblCustomers tbody tr th{
     font-size: 32px;
     text-align: center;
+}
+
+#nrFaturesPrint{
+    font-size: 80px;
+}
+#barcode{
+    display: block;
+    font-size: 40px;
+}
+
+#barcodeHeader{
+    display: block;
+    font-size: 32px;
 }
