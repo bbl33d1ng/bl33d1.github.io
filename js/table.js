@@ -3,6 +3,7 @@
 var produktet = {};
 var produktetId = {};
 var bleresit = [];
+updateNrFat();
 $(function () {
     calculateDetails();
     setSasiaDefault();

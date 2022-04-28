@@ -36,6 +36,7 @@
 
 
         function printo(){
+            updateNrFat();
             window.print();
         }
 
@@ -148,7 +149,7 @@
                             <tr>
                                 <td style="padding-top:20px;padding-left:15px;" colspan="1">Numri Fatures: </td>
                                 <td style="padding-top:20px; padding-bottom:20px;   max-width: 175px;" colspan="1"><input type="text"
-                                        onchange="updateNrFat()" name="nrFatures" style="max-width: 175px;" id="nrFatures"></td>
+                                        onchange="updateNrFat()" onloadeddata="updateNrFat()"  name="nrFatures" style="max-width: 175px;" id="nrFatures"></td>
                                 <td style="justify-self: center; " ><a onclick="clearNrFatInput()"
                                     style="font-weight: bolder;     padding: 5px; font-size: 13px;">
                                     <img style="max-width: 20px; max-height: 20px;" src="/images/remove.png" /></a></td>
