@@ -10,6 +10,7 @@ body, div {
     background: #1d2025 repeat-y !important;
     margin: 0px;
     font-size: 13px;
+    transform: scale(102%);
 }
 
 *{

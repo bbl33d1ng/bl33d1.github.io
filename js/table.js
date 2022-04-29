@@ -1,5 +1,3 @@
-
-
 var produktet = {};
 var produktetId = {};
 var bleresit = [];
@@ -13,9 +11,9 @@ $(function () {
     updateBleresinArrayAndInput();
     updateProduktetArrayAndInput();
     getNumrinEFunditFatures();
-    $('#txtArtikulli').change(function() {
+    $('#txtArtikulli').change(function () {
         $('#txtSasia').text($(this).find(":selected").text());
-      });
+    });
 
     $('#btnAdd').on('click', function () {
         setSasiaDefault();
@@ -33,14 +31,14 @@ $(function () {
             alert("Sheno artikullin!");
         } else {
             //uncomment to add the barcode
-            // for (const [key, value] of Object.entries(produktetId)) {
-            //     //console.log(key, value);
-            //     if(artikulli === key){
-            //         barcode = value;
-            //     }
-            // }
+            for (const [key, value] of Object.entries(produktetId)) {
+                //console.log(key, value);
+                if(artikulli === key){
+                    barcode = value;
+                }
+            }
             qmimi = parseFloat(qmimi).toFixed(2);
-            var table = "<tr><td>"+ artikulli + "</td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>"+(parseFloat(sasia) * parseFloat(qmimi)).toFixed(2)+"</td><td>" + del + "</td></tr>";
+            var table = "<tr><td>" + artikulli + "<span id='barcode'>" +barcode + "</span></td><td>" + sasia + "</td><td>" + (qmimi) + "</td><td>" + (parseFloat(sasia) * parseFloat(qmimi)).toFixed(2) + "</td><td>" + del + "</td></tr>";
             $("#tblCustomers").append(table);
         }
         //add barcode
@@ -50,34 +48,34 @@ $(function () {
         qmimi = $("#txtQmimi").val("");
 
         calculateDetails();
-        
+
         Clear();
     });
-    
-    function updateBleresinArrayAndInput(){
+
+    function updateBleresinArrayAndInput() {
         $.getJSON("../data/bleresit.json", function (data) {
             var bleresitN = '';
             $.each(data, function (key, value) {
                 bleresitN += '<option value="' + value.emri + '"> </option>';
                 var bleresiAktual = {
-                    emri : value.emri,
-                    adresa : value.adresa,
-                    fiskali : value.fiskali
+                    emri: value.emri,
+                    adresa: value.adresa,
+                    fiskali: value.fiskali
                 }
                 bleresit.push(bleresiAktual);
-                
+
             });
             $('#bleresit').append(bleresitN);
         });
-    }    
-    
+    }
 
-    function updateProduktetArrayAndInput(){
+
+    function updateProduktetArrayAndInput() {
         $.getJSON("../data/products.json",
             function (data) {
                 var product = '';
                 $.each(data, function (key, value) {
-                    
+
                     product += '<option value="' + value.emri + '"> </option>';
                     produktet[value.emri] = value.qmimi;
                     produktetId[value.emri] = value.id;
@@ -86,18 +84,19 @@ $(function () {
             });
     }
 
-    function calculateDetails(){
+    function calculateDetails() {
         //iterating through table tds with each method and 
-        var totalSasia = 0.0, totalVlera = 0.0;
-        $("#tblCustomers").find('tr').each(function (i, el){
+        var totalSasia = 0.0,
+            totalVlera = 0.0;
+        $("#tblCustomers").find('tr').each(function (i, el) {
             var $tds = $(this).find('td'),
-            artikulli = $tds.eq(0).text(),
-            sasia = parseFloat($tds.eq(1).text()),
-            qmimi = parseFloat($tds.eq(3).text());
+                artikulli = $tds.eq(0).text(),
+                sasia = parseFloat($tds.eq(1).text()),
+                qmimi = parseFloat($tds.eq(3).text());
 
-            if(!isNaN(sasia) && !isNaN(qmimi)){
+            if (!isNaN(sasia) && !isNaN(qmimi)) {
                 totalSasia += sasia;
-                totalVlera += qmimi;   
+                totalVlera += qmimi;
             }
 
 
@@ -110,10 +109,10 @@ $(function () {
 
         $("#pakoTxt").text(totalSasia);
         $("#tvshTxt").text(vleraPaTvsh + "€");
-        $("#paTvshTxt").text( tvsh18 + "€");
+        $("#paTvshTxt").text(tvsh18 + "€");
         $("#pagesaTxt").text(pagesa + "€");
 
-        
+
 
         //console.log(totalVlera +"|"+totalSasia);
     }
@@ -133,8 +132,8 @@ $(function () {
     });
 
     $("#tblCustomers").on("click", ".delete", function (e) {
-            $(this).closest('tr').remove();
-            calculateDetails();
+        $(this).closest('tr').remove();
+        calculateDetails();
     });
 
     $('#btnClear').on('click', function () {
@@ -152,6 +151,7 @@ $(function () {
         $('#btnUpdate').show();
     });
 });
+
 function Clear() {
     $("#txtArtikulli").val("");
     $("#txtSasia").val("");
@@ -159,22 +159,22 @@ function Clear() {
     $("#hfRowIndex").val("");
 }
 
-function getPrice(){
+function getPrice() {
     setSasiaDefault();
     var selectedProd = $("#txtArtikulli").val();
     for (const [key, value] of Object.entries(produktet)) {
         //console.log(key, value);
-        if(selectedProd === key){
+        if (selectedProd === key) {
             $("#txtQmimi").val(value);
         }
     }
 }
 
-function updateBleresin(){
+function updateBleresin() {
     $("#bleresi").text($("#browser").val());
     //var selectedBleresi = $("browser").val();
     bleresit.forEach(b => {
-        if($("#browser").val() === b.emri){
+        if ($("#browser").val() === b.emri) {
             $("#nrFiskal").text(b.fiskali);
             $("#adresa").text(b.adresa);
             console.log($("#adresa").text());
@@ -183,64 +183,58 @@ function updateBleresin(){
     });
 }
 
-function getNumrinEFunditFatures(){
+function getNumrinEFunditFatures() {
     //read from JSON 
     // $.getJSON("../data/details.json", function (data) {
     //     $("#nrFatures").val(data.nrFundit);
     // });
     var nrFundit = localStorage.getItem('nrFunditStorage');
-    if(nrFundit === null){
+    if (nrFundit === null) {
         localStorage.setItem('nrFunditStorage', 1);
         $("#nrFatures").val("1");
-    }else{
+    } else {
         $("#nrFatures").val(nrFundit);
     }
-    
+
 }
 
-
-
-function addOneToNrFatFundit(){
+function addOneToNrFatFundit() {
     var obj = localStorage.getItem('nrFunditStorage');
-    var FatPlusOne = parseInt(obj) + 1 ;
+    var FatPlusOne = parseInt(obj) + 1;
 
     localStorage.setItem('nrFunditStorage', FatPlusOne);
 }
 
-function clearTable(){
+function clearTable() {
     window.location.href = window.location.href;
     addOneToNrFatFundit();
 }
 
-function setSasiaDefault(){
+function setSasiaDefault() {
     var sasia = $("#txtSasia").val();
-    if(sasia == ''){
+    if (sasia == '') {
         $("#txtSasia").val("1");
     }
 }
 
-function selectSasia(){
+function selectSasia() {
     $("#txtSasia").select();
 }
 
-function selectQmimi(){
+function selectQmimi() {
     $("#txtQmimi").select();
 }
 
-function selectArtikulli(){
+function selectArtikulli() {
     $("#txtArtikulli").select();
 }
 
-function updateNrFat(){
+function updateNrFat() {
     //console.log("HIT");
-    var fatInput = $("#nrFatures").val();
-
+    var fatInput = $("#nrFatures").val() + "/2022";
     $("#nrFaturesPrint").text(fatInput);
 }
 
-
-
-function updateSot(){
+function updateSot() {
     $("#dataSot").text(new Date().toLocaleDateString('en-GB'))
 }
-
