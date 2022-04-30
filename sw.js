@@ -9,11 +9,15 @@ const filesToCache = [
     "js/jquery.js",
     "images/remove.png",
     "images/minusWhite.png",
-    "https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap",
+    "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap",
+    "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap",
+    "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap",
+    "https://fonts.googleapis.com/css2?family=DM+Mono&family=Nova+Mono&family=Poppins:ital,wght@0,300;0,500;1,200&family=Space+Mono&display=swap",
     "https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,500&family=Nova+Mono&family=Poppins:ital,wght@0,300;0,500;1,200&family=Space+Mono&display=swap",
-    "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap"
+    "https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap",
+    "https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 ];
-const staticCacheName = 'pages-cache-v6';
+const staticCacheName = 'pages-cache-v9';
 
 self.addEventListener('install', event => {
   //console.log('Attempting to install service worker and cache static assets');
@@ -26,13 +30,21 @@ self.addEventListener('install', event => {
 });
 
 addEventListener('activate', event => {
-    event.waitUntil(async function() {
+    event.waitUntil(
       // Feature-detect
-      if (self.registration.navigationPreload) {
-        // Enable navigation preloads!
-        await self.registration.navigationPreload.enable();
-      }
-    }());
+      // if (self.registration.navigationPreload) {
+      //   // Enable navigation preloads!
+      //   await self.registration.navigationPreload.enable();
+      // }
+      caches.keys()
+      .then(cacheNames => {
+        cacheNames.map(cache => {
+          if(cache !== staticCacheName){
+            return caches.delete(cache);
+          }
+        })
+      })
+    )
   });
 
   addEventListener('fetch', (event) => {

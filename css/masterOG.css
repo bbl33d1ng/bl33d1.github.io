@@ -10,11 +10,12 @@ body, div {
     background: #1d2025 repeat-y !important;
     margin: 0px;
     font-size: 13px;
-    transform: scale(102%);
+   
 }
 
 *{
     margin:0px;
+    
 }
 
 .num-font {
@@ -191,7 +192,7 @@ input[alt="Delete"] {
 }
 
 #mainDiv{
-    max-width: 400px;
+    max-width: 450px;
 }
 
 .colPadding {
