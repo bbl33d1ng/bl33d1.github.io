@@ -13,7 +13,7 @@ const filesToCache = [
     "https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,500&family=Nova+Mono&family=Poppins:ital,wght@0,300;0,500;1,200&family=Space+Mono&display=swap",
     "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap"
 ];
-const staticCacheName = 'pages-cache-v5';
+const staticCacheName = 'pages-cache-v6';
 
 self.addEventListener('install', event => {
   //console.log('Attempting to install service worker and cache static assets');
