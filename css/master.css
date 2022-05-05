@@ -136,10 +136,10 @@
 }
 
 #tblCustomers td {overflow:hidden;}/*Hide text outside the cell.*/
-#tblCustomers tbody tr td:nth-child(1){width:500px;}
-#tblCustomers tbody tr td:nth-child(2){width:300px;}
-#tblCustomers tbody tr td:nth-child(3){width:350px;}
-#tblCustomers tbody tr td:nth-child(4){width:350px;}
+#tblCustomers tbody tr td:nth-child(1){width:500px; }
+#tblCustomers tbody tr td:nth-child(2){width:300px; padding-left: 0px;}
+#tblCustomers tbody tr td:nth-child(3){width:350px; padding-left: 0px; padding-right: 0px;}
+#tblCustomers tbody tr td:nth-child(4){width:350px; padding-right: 0px;}
 
 #invoiceDetails tbody tr td:nth-child(2){
     text-align: right;

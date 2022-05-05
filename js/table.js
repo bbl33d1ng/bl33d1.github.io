@@ -22,6 +22,8 @@ $(function () {
         sasia = $("#txtSasia").val();
         qmimi = $("#txtQmimi").val();
 
+        if(sasia === ".5")sasia = "0.5";
+        
         //var edit = "<a class='edit' href='JavaScript:voartikulli(0);' >Edit</a>";
         var del = "<a class='delete' href='JavaScript:voartikulli(0);'><img style='max-width:20px; max-height:20px;' src='/images/minusWhite.png'></a>";
 

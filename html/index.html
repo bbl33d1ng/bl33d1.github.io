@@ -128,7 +128,7 @@
             <br />
             <div class="row">
                 <div class="col">
-                    <h4 class="krijoHeader text-white table-header-font">Krijo Fature</h4>
+                    <h4 class="krijoHeader text-white table-header-font" style="font-weight: 600;">Krijo Fature</h4>
                 </div>
             </div>
             <br />
@@ -138,7 +138,7 @@
                     <div  class="bleresiDiv">
                         <table class="tblDetajetEFatures">
                             <tr>
-                                <td style="padding-left:15px; text-align: right;" colspan="1">Nr Fatures: </td>
+                                <td style=" text-align: right;" colspan="1">Nr Fatures: </td>
                                 <td style="padding-top:20px; padding-bottom:20px;   max-width: 175px;" colspan="1"><input type="text"
                                         onchange="updateNrFat()" onloadeddata="updateNrFat()"  name="nrFatures" style="width: 80%;" id="nrFatures"></td>
                                 <td style="justify-self: center; " ><a onclick="clearNrFatInput()"
@@ -213,8 +213,8 @@
                         </style>
                         <tr>
 
-                            <td colspan="6" style="text-align: center; padding: 6px;">
-                                <button class="btn btn-info endButtons2 hideFromPrinting" type="button" id="btnAdd">Shto
+                            <td colspan="6" style="text-align: center; padding: 6px; padding-bottom: 14px;padding-top: 10px;">
+                                <button style="background-color: #188181;" class="btn btn-info endButtons2 hideFromPrinting" type="button" id="btnAdd">Shto
                                     rreshtin</button>
                             </td>
                         </tr>
@@ -246,8 +246,8 @@
                             <!--<tr>
                                 <td>Rothmans of london blue<span id="barcode">4030600001295</span></td>
                                 <td>2</td>
-                                <td>2.00</td>
-                                <td>4.00</td>
+                                <td>223.00</td>
+                                <td>49.00</td>
                                 <td><a class="delete" href="JavaScript:void(0);"><img
                                             style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a>
                                 </td>
@@ -255,8 +255,8 @@
                             <tr>
                                 <td>Rothmans of london blue<span id="barcode">4030600001295</span></td>
                                 <td>2</td>
-                                <td>2.00</td>
-                                <td>4.00</td>
+                                <td>223.00</td>
+                                <td>494.00</td>
                                 <td><a class="delete" href="JavaScript:void(0);"><img
                                             style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a>
                                 </td>
@@ -311,19 +311,8 @@
             <br />
 
             <div class="row justify-content-center">
-                <style>
-                    .endButtons {
-                        width: 100%;
-                        min-width: 300px;
-                    }
-                    .endButtons2 {
-                        width: 90%;
-                        min-width: 300px;
-                    }
-                </style>
-
                 <div class="col-12">
-                    <a type="button" onclick="printo()" class="btn btn-info endButtons hideFromPrinting">Printo Faturen</a>
+                    <button type="button" onclick="printo()" style="background-color: #188181;" class="btn btn-info endButtons hideFromPrinting">Printo Faturen</button >
                     <!-- <button class="btn btn-info endButtons hideFromPrinting" onclick="print()">Printo Faturen</button> -->
                 </div>
                 <div id="text">
@@ -332,7 +321,7 @@
             <br />
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <a type="button" onclick="clearTable()" class="btn btn-dark endButtons hideFromPrinting">Fature e re</a>
+                    <button type="button" onclick="clearTable()" class="btn btn-dark endButtons hideFromPrinting">Fature e re</button>
                 </div>
             </div>
             <div id="dergoiPagoi" >
