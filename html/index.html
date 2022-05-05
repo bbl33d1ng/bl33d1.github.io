@@ -14,23 +14,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="/css/master.css" type="text/css" media="print" />
     <link rel="stylesheet" href="/css/masterOG.css" type="text/css" media="screen" />
-    <script src="https://kit.fontawesome.com/52609cfd41.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/52609cfd41.js" crossorigin="anonymous"></script> -->
     <script src="/js/jquery.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-    <link href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' rel='stylesheet' />
+    <!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+    <!-- <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin /> -->
+    <!-- <link href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' rel='stylesheet' /> -->
     <style>
-        td,
-        h1,
-        h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-
-
-        thead>tr>td {
-            font-size: 55px;
-        }
+        
     </style>
     <script type="text/javascript">
 
@@ -40,10 +31,10 @@
             window.print();
         }
 
-        function generatePDF() {
-            const element = document.getElementById("test");
-            html2pdf().from(element).save();
-        }
+        // function generatePDF() {
+        //     const element = document.getElementById("test");
+        //     html2pdf().from(element).save();
+        // }
 
         function selectSasia() {
             const input = document.getElementById("txtSasiaNew");
@@ -144,12 +135,12 @@
             <br />
             <div class="row justify-content-center">
                 <div class="col">
-                    <div style="margin-left: -10px;" class="bleresiDiv">
-                        <table style="min-width: 326px;">
+                    <div  class="bleresiDiv">
+                        <table class="tblDetajetEFatures">
                             <tr>
-                                <td style="padding-top:20px;padding-left:15px;" colspan="1">Numri Fatures: </td>
+                                <td style="padding-left:15px; text-align: right;" colspan="1">Nr Fatures: </td>
                                 <td style="padding-top:20px; padding-bottom:20px;   max-width: 175px;" colspan="1"><input type="text"
-                                        onchange="updateNrFat()" onloadeddata="updateNrFat()"  name="nrFatures" style="max-width: 175px;" id="nrFatures"></td>
+                                        onchange="updateNrFat()" onloadeddata="updateNrFat()"  name="nrFatures" style="width: 80%;" id="nrFatures"></td>
                                 <td style="justify-self: center; " ><a onclick="clearNrFatInput()"
                                     style="font-weight: bolder;     padding: 5px; font-size: 13px;">
                                     <img style="max-width: 20px; max-height: 20px;" src="/images/remove.png" /></a></td>
@@ -192,12 +183,9 @@
 
                     <table class="addProdTable">
                         <tr>
-                            <td style="justify-self: center; padding-left:5px;text-align: center;"><br />
-                                <a onclick="clearArtikulliInput()" style="font-size: 13px;">
-                                    <img style="max-width: 20px; max-height: 20px; margin-right: -10px;" src="/images/remove.png" /></a>
-                            </td>
-                            <td style="padding: 6px; width: 40%;" onclick="selectArtikulli()">Artikulli<br />
-                                <input style="max-width: 140px;" name="ddArtikulli" value="" onchange="getPrice()"
+
+                            <td style="padding: 6px;  width: 60%; text-align: left;" onclick="selectArtikulli()"><span style="margin-left: 20px;">Artikulli</span><br />
+                                <input style="margin-left: 20px;" name="ddArtikulli" value="" onchange="getPrice()"
                                     id="txtArtikulli" list="artikujt" />
                                 <datalist id="artikujt">
                                     <script>
@@ -213,8 +201,9 @@
                             <td style="padding: 2px;    width: 14%;" onclick="selectQmimi()">Qmimi<br />
                                 <input style="max-width: 35px;" type="text" name="Qmimi" id="txtQmimi" value="" />
                             </td>
-                            <td style="padding: 2px; margin-top:2px;">Vlera<br />
-                                <input style="max-width: 35px;" type="text" name="Qmimi" id="txtQmimi" value="" />
+                            <td style="justify-self: center; padding-left:5px;text-align: center; width: 10%;"><br />
+                                <a onclick="clearArtikulliInput()" style="font-size: 13px; margin-right: 30px;">
+                                    <img style="max-width: 20px; max-height: 20px;" src="/images/remove.png" /></a>
                             </td>
                         </tr>
                         <style>
@@ -225,7 +214,7 @@
                         <tr>
 
                             <td colspan="6" style="text-align: center; padding: 6px;">
-                                <button class="btn btn-info endButtons hideFromPrinting" type="button" id="btnAdd">Shto
+                                <button class="btn btn-info endButtons2 hideFromPrinting" type="button" id="btnAdd">Shto
                                     rreshtin</button>
                             </td>
                         </tr>
@@ -236,7 +225,7 @@
             <br />
             <br />
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="padding-left: 15px; padding-right: 15px;">
                 <div class="col colPadding">
                     <table id="tblCustomers" class="table">
                         <colgroup>
@@ -247,7 +236,7 @@
                             <col span="1" style="width: 10%;">
                          </colgroup>
                         <tr>
-                            <th><span id="barcodeHeader">Artikulli</span>Barcode</th>
+                            <th>Artikulli</th>
                             <th>Sasia</th>
                             <th>Qmimi</th>
                             <th>Vlera</th>
@@ -264,93 +253,21 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
+                                <td>Rothmans of london blue<span id="barcode">4030600001295</span></td>
+                                <td>2</td>
+                                <td>2.00</td>
+                                <td>4.00</td>
                                 <td><a class="delete" href="JavaScript:void(0);"><img
                                             style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
+                                <td>Rothmans of london blue<span id="barcode">4030600001295</span></td>
+                                <td>2</td>
+                                <td>2.00</td>
+                                <td>4.00</td>
                                 <td><a class="delete" href="JavaScript:void(0);"><img
                                             style="max-width:20px; max-height:20px;" src="/images/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>CCosdasde</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red Code</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>RedCode</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Red ed ode</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>12</td>
-                                <td><a class="delete" href="JavaScript:void(0);"><img
-                                            style="max-width:20px; max-height:20px;" src="/minusWhite.png"></a>
                                 </td>
                             </tr> -->
                         </tbody>
@@ -365,38 +282,47 @@
 
                 </div>
             </div>
-
-            <table class="table-striped table-dark table-bordered" id="invoiceDetails"
-                style="border: 1px solid white; padding: 10px !important;">
-                <tr>
-                    <td class="sasia">Sasia:</td>
-                    <td class="sasia" id="pakoTxt"></td>
-                </tr>
-                <tr>
-                    <td>Vlera pa TVSH:</td>
-                    <td id="paTvshTxt"></td>
-                </tr>
-                <tr>
-                    <td>TVSH 18%:</td>
-                    <td id="tvshTxt"></td>
-                </tr>
-                <tr>
-                    <td class="pagesa">Pagesa:</td>
-                    <td id="pagesaTxt" class="pagesa"></td>
-
-                </tr>
-            </table>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <table class="table-striped table-dark table-bordered" id="invoiceDetails"
+                    style="border: 1px solid white; padding: 10px !important; width: 65%;">
+                        <tr>
+                            <td class="sasia">Sasia:</td>
+                            <td class="sasia" id="pakoTxt"></td>
+                        </tr>
+                        <tr>
+                            <td>Vlera pa TVSH:</td>
+                            <td id="paTvshTxt"></td>
+                        </tr>
+                        <tr>
+                            <td>TVSH 18%:</td>
+                            <td id="tvshTxt"></td>
+                        </tr>
+                        <tr>
+                            <td class="pagesa">Pagesa:</td>
+                            <td id="pagesaTxt" class="pagesa"></td>
+        
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
 
             <br />
 
-            <div class="row">
+            <div class="row justify-content-center">
                 <style>
                     .endButtons {
-                        min-width: 327px;
+                        width: 100%;
+                        min-width: 300px;
+                    }
+                    .endButtons2 {
+                        width: 90%;
+                        min-width: 300px;
                     }
                 </style>
 
-                <div class="col-6">
+                <div class="col-12">
                     <a type="button" onclick="printo()" class="btn btn-info endButtons hideFromPrinting">Printo Faturen</a>
                     <!-- <button class="btn btn-info endButtons hideFromPrinting" onclick="print()">Printo Faturen</button> -->
                 </div>
@@ -404,8 +330,8 @@
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="col-6">
+            <div class="row justify-content-center">
+                <div class="col-12">
                     <a type="button" onclick="clearTable()" class="btn btn-dark endButtons hideFromPrinting">Fature e re</a>
                 </div>
             </div>
@@ -432,7 +358,7 @@
 
     </form>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
     <script type="text/javascript" src="/js/table.js"></script>
     
 </body>
