@@ -28,15 +28,9 @@
 },
 {"id":"3800221967321","emri":"King blue 100s","qmimi":"14.9"
 },
-{"id":"3856008800008","emri":"Ronhill blue","qmimi":"16.8"
-},
-{"id":"3856008800015","emri":"Ronhill white","qmimi":"17.5"
-},
-{"id":"3856008800053","emri":"Ronhill 100 s","qmimi":"16.9"
-},
 {"id":"3856008803214","emri":"Ronchill I zi","qmimi":"14"
 },
-{"id":"3856008850874","emri":"Rothmans Clasic Blue 100s","qmimi":"17.9"
+{"id":"3856008850874","emri":"Rothmans Clasic Blue 100s","qmimi":"18.9"
 },
 {"id":"3870006000239","emri":"Opatia red","qmimi":"14"
 },
@@ -62,21 +56,21 @@
 },
 {"id":"4030600222904","emri":"Davidoff reach blue","qmimi":"18.1"
 },
-{"id":"4031300102749","emri":"Kent blue 8","qmimi":"27.5"
+{"id":"4031300102749","emri":"Kent blue 8","qmimi":"28.5"
 },
-{"id":"4031300102756","emri":"Kent silver 4","qmimi":"27.5"
+{"id":"4031300102756","emri":"Kent silver 4","qmimi":"28.5"
 },
-{"id":"4031300107850","emri":"Rothmans Rich Blue","qmimi":"15.9"
+{"id":"4031300107850","emri":"Rothmans Rich Blue","qmimi":"18.9"
 },
-{"id":"4031300111123","emri":"Rothmans Clasic Blue","qmimi":"17.9"
+{"id":"4031300111123","emri":"Rothmans Clasic Blue","qmimi":"18.9"
 },
-{"id":"4031300132418","emri":"Lucky strike red soft","qmimi":"19.9"
+{"id":"4031300132418","emri":"Lucky strike red soft","qmimi":"20.0"
 },
-{"id":"4031300132425","emri":"Lucky strike blue soft","qmimi":"19.9"
+{"id":"4031300132425","emri":"Lucky strike blue soft","qmimi":"20.9"
 },
-{"id":"4031300148204","emri":" Lucky strike I ri I madh","qmimi":"20.9"
+{"id":"4031300148204","emri":" Lucky strike I ri I madh","qmimi":"21.9"
 },
-{"id":"4032900000213","emri":"Eva slims","qmimi":"15.1"
+{"id":"4032900000213","emri":"Eva slims","qmimi":"16.1"
 },
 {"id":"4032900005829","emri":"Winston silver me box","qmimi":"21.9"
 },
@@ -148,31 +142,31 @@
 },
 {"id":"5700527203216","emri":"Winston 10t","qmimi":"21.9"
 },
-{"id":"5903141050017","emri":"Lucky strike I ri kaft","qmimi":"18.9"
+{"id":"5903141050017","emri":"Lucky strike I ri kaft","qmimi":"19.9"
 },
-{"id":"5903141075614","emri":"Lucky strike I ri blue","qmimi":"18.9"
+{"id":"5903141075614","emri":"Lucky strike I ri blue","qmimi":"19.9"
 },
-{"id":"5903141077960","emri":"Lucky strike capsul wild","qmimi":"21.9"
+{"id":"5903141077960","emri":"Lucky strike capsul wild","qmimi":"22.9"
 },
-{"id":"5903141078288","emri":"Rothmans D-Series Silver","qmimi":"15.9"
+{"id":"5903141078288","emri":"Rothmans D-Series Silver","qmimi":"16.9"
 },
-{"id":"5903141090532","emri":"Kent cristal blue","qmimi":"21.9"
+{"id":"5903141090532","emri":"Kent cristal blue","qmimi":"22.9"
 },
-{"id":"5903141090556","emri":"Kent kristal silver","qmimi":"21.9"
+{"id":"5903141090556","emri":"Kent kristal silver","qmimi":"22.9"
 },
 {"id":"59070245","emri":"Llaki resized wild","qmimi":"19.9"
 },
-{"id":"5942425002403","emri":"Lucky strike blue 10/1=20","qmimi":"21.9"
+{"id":"5942425002403","emri":"Lucky strike blue 10/1=20","qmimi":"22.9"
 },
 {"id":"5942425002915","emri":"Dunhill masrer blend","qmimi":"25"
 },
-{"id":"5948530001607","emri":"Prestigj","qmimi":"17.9"
+{"id":"5948530001607","emri":"Prestigj","qmimi":"18.9"
 },
 {"id":"6943981300049","emri":"Shkrepsa me drit","qmimi":"5.5"
 },
-{"id":"7612400013554","emri":"Lucky strike red","qmimi":"20.9"
+{"id":"7612400013554","emri":"Lucky strike red","qmimi":"21.9"
 },
-{"id":"7612400013578","emri":"Lucky strike blue","qmimi":"20.9"
+{"id":"7612400013578","emri":"Lucky strike blue","qmimi":"21.9"
 },
 {"id":"7622100845089","emri":"Philip morris blue","qmimi":"20"
 },
@@ -199,6 +193,10 @@
 {"id":"Duhan","emri":"Duhan","qmimi":"3"
 },
 {"id":"Kese","emri":"Kese","qmimi":"3"
+},
+{"id":"Mall pa barkod","emri":"Rothmans D-Series Blue","qmimi":"16.9"
+},
+{"id":"Mall pa barkod","emri":"Lucky strike capsul 1 Shije","qmimi":"20.9"
 },
 {"id":"Mall pa barkod","emri":"Mall pa barkod","qmimi":"0.0000"
 },
